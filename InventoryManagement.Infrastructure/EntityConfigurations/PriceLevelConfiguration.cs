@@ -8,6 +8,8 @@ namespace InventoryManagement.Infrastructure.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<PriceLevel> builder)
         {
+            builder.HasIndex(p => p.Name).IsUnique().HasDatabaseName("NameIndex"); //Index to improve DB Search performance
+            builder.Property(p => p.Name).IsRequired().HasMaxLength(20);
         }
     }
 }

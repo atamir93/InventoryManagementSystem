@@ -15,7 +15,7 @@ namespace InventoryManagement.Infrastructure.EntityConfigurations
 
             builder.Ignore(p => p.AllProducts);
 
-            builder.HasMany(p => p.ChildCategories).WithOne(p => p.ParentCategory);
+            builder.HasMany(p => p.ChildCategories).WithOne(p => p.ParentCategory).OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

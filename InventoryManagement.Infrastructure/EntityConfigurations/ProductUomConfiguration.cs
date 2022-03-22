@@ -8,6 +8,10 @@ namespace InventoryManagement.Infrastructure.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<ProductUom> builder)
         {
+            builder.HasIndex(p => new { p.Name, p.ProductId }).IsUnique();
+            builder.Property(p => p.Name).IsRequired().HasMaxLength(50);
+
+            builder.Property(p=>p.IsLargerThanMainUnit).HasDefaultValue(true);
         }
     }
 }

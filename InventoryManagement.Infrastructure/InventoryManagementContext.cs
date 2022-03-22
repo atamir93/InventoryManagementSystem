@@ -9,6 +9,7 @@ namespace InventoryManagement.Infrastructure
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
+        public DbSet<PriceLevel> PriceLevels { get; set; }
 
         public InventoryManagementContext()
         {
@@ -20,7 +21,7 @@ namespace InventoryManagement.Infrastructure
         {
             //UseLazyLoadingProxies()  requires only the navigation properties be virtual
             //optionsBuilder.UseLazyLoadingProxies().UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = InventoryManagement; Trusted_Connection = True; ",options => options.MaxBatchSize(100));
-            
+
             optionsBuilder.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = InventoryManagementSystem; Trusted_Connection = True; ");
         }
 

@@ -10,6 +10,7 @@ namespace InventoryManagement.Infrastructure.EntityConfigurations
         {
             builder.HasIndex(p => p.Sku).IsUnique().HasDatabaseName("SkuIndex"); //Index to improve DB Search performance
             builder.Property(p => p.Sku).HasMaxLength(50);
+            builder.Property(p => p.Name).HasMaxLength(200);
             builder.Property(p => p.Weight).HasColumnName("UnitWeight");
 
             builder.Property(p => p.IsActive).HasDefaultValue(true);

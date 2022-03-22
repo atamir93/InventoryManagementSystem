@@ -8,6 +8,8 @@ namespace InventoryManagement.Infrastructure.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<ProductPrice> builder)
         {
+            builder.HasIndex(p => new { p.ProductUomId, p.PriceLevelId }).IsUnique();
+            builder.HasOne(p => p.PriceFormula).WithOne(p => p.ProductPrice).HasForeignKey<ProductPrice>(p => p.PriceFormulaId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

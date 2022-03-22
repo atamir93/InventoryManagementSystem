@@ -4,11 +4,12 @@ using System.Collections.Generic;
 
 namespace InventoryManagement.Domain.Model
 {
-    public class Product : Entity, IHistory
+    public class Product : Entity, ICreatedHistory
     {
         public DateTime CreatedDate { get; set; }
         public string Sku { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
         public decimal Cost { get; set; }
         public decimal Weight { get; set; }
         public bool IsActive { get; set; }

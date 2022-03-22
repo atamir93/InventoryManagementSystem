@@ -1,4 +1,5 @@
 ﻿using InventoryManagement.Domain.Common;
+using System.Collections.Generic;
 
 namespace InventoryManagement.Domain.Model
 {
@@ -8,8 +9,10 @@ namespace InventoryManagement.Domain.Model
         public bool IsMainUnit { get; set; }
         public bool IsLargerThanMainUnit { get; set; }
         public decimal Multiplier { get; set; }
-        public Product Product { get; set; }
+
         public int ProductId { get; set; }
-        public ProductPrice ProductPrice { get; set; }
+        public Product Product { get; set; }
+
+        public List<ProductPrice> ProductPrice { get; set; }
     }
 }

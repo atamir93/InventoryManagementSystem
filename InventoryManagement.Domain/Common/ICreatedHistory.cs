@@ -2,7 +2,7 @@
 
 namespace InventoryManagement.Domain.Common
 {
-    public interface IHistory
+    public interface ICreatedHistory
     {
         DateTime CreatedDate { get; set; }
     }
