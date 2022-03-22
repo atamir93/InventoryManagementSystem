@@ -14,8 +14,9 @@ namespace InventoryManagement.Infrastructure.Persistence.EntityConfigurations
             builder.Property(p => p.CreatedDate).HasDefaultValueSql("getdate()");
 
             builder.Ignore(p => p.AllProducts);
+            builder.Ignore(p => p.AllChildCategories);
 
-            builder.HasMany(p => p.ChildCategories).WithOne(p => p.ParentCategory).OnDelete(DeleteBehavior.SetNull);
+            builder.HasMany(p => p.ChildCategories).WithOne(p => p.ParentCategory).HasForeignKey(p => p.ParentCategoryId).OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

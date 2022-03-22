@@ -12,6 +12,7 @@ namespace InventoryManagement.Domain.Model
 
         public int PriceLevelId { get; set; }
         public PriceLevel PriceLevel { get; set; }
+
         public decimal Price { get; set; }
     }
 }
