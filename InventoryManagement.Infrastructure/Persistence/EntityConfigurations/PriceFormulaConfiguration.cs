@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace InventoryManagement.Infrastructure.EntityConfigurations
+namespace InventoryManagement.Infrastructure.Persistence.EntityConfigurations
 {
     public class PriceFormulaConfiguration : IEntityTypeConfiguration<PriceFormula>
     {

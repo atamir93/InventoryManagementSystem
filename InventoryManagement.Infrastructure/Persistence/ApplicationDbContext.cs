@@ -1,17 +1,17 @@
 ﻿using InventoryManagement.Domain.Model;
-using InventoryManagement.Infrastructure.EntityConfigurations;
+using InventoryManagement.Infrastructure.Persistence.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
 
-namespace InventoryManagement.Infrastructure
+namespace InventoryManagement.Infrastructure.Persistence
 {
-    public class InventoryManagementContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<PriceLevel> PriceLevels { get; set; }
 
-        public InventoryManagementContext()
+        public ApplicationDbContext()
         {
             Database.EnsureDeleted();
             Database.EnsureCreated();
@@ -28,6 +28,8 @@ namespace InventoryManagement.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
             modelBuilder.ApplyConfiguration(new ProductCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
             modelBuilder.ApplyConfiguration(new WarehouseConfiguration());
