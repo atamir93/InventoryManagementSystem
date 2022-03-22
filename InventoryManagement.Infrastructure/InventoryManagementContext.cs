@@ -34,7 +34,6 @@ namespace InventoryManagement.Infrastructure
             modelBuilder.ApplyConfiguration(new PriceLevelConfiguration());
             modelBuilder.ApplyConfiguration(new ProductUomConfiguration());
             modelBuilder.ApplyConfiguration(new ProductPriceConfiguration());
-            modelBuilder.ApplyConfiguration(new GlobalPriceFormulaConfiguration());
             modelBuilder.ApplyConfiguration(new PriceFormulaConfiguration());
         }
     }
