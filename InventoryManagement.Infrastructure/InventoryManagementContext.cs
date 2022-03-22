@@ -22,7 +22,8 @@ namespace InventoryManagement.Infrastructure
             //UseLazyLoadingProxies()  requires only the navigation properties be virtual
             //optionsBuilder.UseLazyLoadingProxies().UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = InventoryManagement; Trusted_Connection = True; ",options => options.MaxBatchSize(100));
 
-            optionsBuilder.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = InventoryManagementSystem; Trusted_Connection = True; ");
+            var connectionString = "Server = (localdb)\\mssqllocaldb; Database = InventoryManagementSystem; Trusted_Connection = True; ";
+            optionsBuilder.UseSqlServer(connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
