@@ -1,7 +1,5 @@
 ﻿using FluentValidation;
 using InventoryManagement.Domain.Model;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace InventoryManagement.Infrastructure.Validators
 {
@@ -13,7 +11,6 @@ namespace InventoryManagement.Infrastructure.Validators
             RuleFor(p => p.Name).NotEmpty();
             RuleFor(p => p.ParentCategoryId).NotEqual(p => p.Id)
                 .DependentRules(() => RuleFor(p => p.ParentCategory).NotEqual(p => p));
-            //RuleForEach(p => p.AllChildCategories).NotEqual(p => p.ParentCategory);
             RuleFor(p => p.ParentCategory).Must(DoesNotContainParentCategory);
         }
 
