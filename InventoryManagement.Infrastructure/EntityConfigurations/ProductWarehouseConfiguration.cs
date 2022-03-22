@@ -1,4 +1,4 @@
-﻿using InventoryManagement.Domain;
+﻿using InventoryManagement.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

@@ -1,4 +1,4 @@
-﻿namespace InventoryManagement.Domain
+﻿namespace InventoryManagement.Domain.Model
 {
     public class PriceFormulaGlobalLink : PriceFormula
     {

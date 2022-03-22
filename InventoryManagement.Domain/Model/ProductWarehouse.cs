@@ -1,8 +1,9 @@
-﻿using System;
+﻿using InventoryManagement.Domain.Common;
+using System;
 
-namespace InventoryManagement.Domain
+namespace InventoryManagement.Domain.Model
 {
-    public class ProductWarehouse
+    public class ProductWarehouse : IHistory
     {
         public decimal Available { get; set; }
         public decimal OnHand { get; set; }

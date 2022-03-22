@@ -1,4 +1,6 @@
-﻿namespace InventoryManagement.Domain
+﻿using InventoryManagement.Domain.Common;
+
+namespace InventoryManagement.Domain.Model
 {
     public abstract class PriceFormula : Entity
     {
