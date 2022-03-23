@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace InventoryManagement.Domain.Model
 {
-    public class Product : Entity, ICreatedHistory
+    public class Product : Entity, ICreatedHistory, IAggregateRoot
     {
         public DateTime CreatedDate { get; set; }
         public string Sku { get; set; }

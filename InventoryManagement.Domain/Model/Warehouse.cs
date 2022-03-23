@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace InventoryManagement.Domain.Model
 {
-    public class Warehouse : Entity, ICreatedHistory
+    public class Warehouse : Entity, ICreatedHistory, IAggregateRoot
     {
         public string Name { get; set; }
         public bool IsActive { get; set; }
